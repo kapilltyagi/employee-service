@@ -1,0 +1,33 @@
+server:
+  port: 8181
+spring:
+  application:
+    name: employee-service
+  r2dbc: # should be under 'spring'
+    username: postgres
+    password: postgres
+    url: r2dbc:postgresql://localhost/employeedb
+
+
+admin:
+  database:
+    host: localhost
+    port: 5432
+    databaseName: employeedb
+    username: postgres
+    password: postgres
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    
+  #instance:
+    #instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    #hostname: localhost
+    #lease-renewal-interval-in-seconds: 10
+    #lease-expiration-duration-in-seconds: 30
+
+
+
